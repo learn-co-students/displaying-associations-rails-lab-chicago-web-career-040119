@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+count = 0
+10.times do
+  @artist = Artist.create(name: "artist #{count}")
+  5.times do
+    Song.create(title: "song #{count}", artist_id: @artist.id)
+  end
+  count += 1
+end
